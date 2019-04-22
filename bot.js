@@ -34,11 +34,11 @@ bot.client.on("guildMemberAdd", member => {
     let guild = member.guild;
     var guildID = member.guild.id;
     var guildGeneral = member.guild.defaultChannel.id;
-    //console.log(guildGeneral);
-    //console.log(guildID);
+    console.log(guildGeneral);
+    console.log(guildID);
     if (guildID == "250354580926365697") { //Meme M8s Guild ID
         member.addRole(guild.roles.find('name', 'Lil Meme'));
-        //client.channels.get(guildGeneral).sendMessage("Hey " + member.displayName + ", welcome to the **Chill Spot**! You are now a Lil Meme. Please read #welcome and enjoy your stay!");
+        client.channels.get(guildGeneral).sendMessage("Hey " + member.displayName + ", welcome to the **Chill Spot**! You are now a Lil Meme. Please read #welcome and enjoy your stay!");
     }
     if (guildID == "169960109072449536") { //Innovative Studios Guild ID
         member.addRole(guild.roles.find('name', 'Citizens of Townsville'));
@@ -61,9 +61,9 @@ bot.client.on("guildDelete", guild => {
 
 bot.setPrefix(config.prefix)
 
-//bot.registerModule(require('./modules/stream/mixer'));
+bot.registerModule(require('./modules/stream/mixer'));
 bot.registerModule(require('./modules/admin/eval'));
-//bot.registerModule(require('./modules/radioplay'));
+bot.registerModule(require('./modules/radioplay'));
 bot.registerModule(require('./modules/commands/help'));
 bot.registerModule(require('./modules/audio/radio/radiostats'));
 bot.registerModule(require('./modules/audio/radio/radioplay'));
